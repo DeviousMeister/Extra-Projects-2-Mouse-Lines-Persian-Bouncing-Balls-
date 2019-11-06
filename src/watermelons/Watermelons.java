@@ -15,6 +15,9 @@ public class Watermelons {
 	 * @return an array containing the sums of pairs as described above
 	 */
 	public static int[] allPairSums(int[] nums) {
+		for(int i = 0; i<nums.length; ++i){
+
+		}
 		int[] ans = new int[] { 0 };  // FIXME compute ans as the result you want
 		return ans;
 	}

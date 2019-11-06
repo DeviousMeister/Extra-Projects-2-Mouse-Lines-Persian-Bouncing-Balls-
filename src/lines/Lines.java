@@ -2,6 +2,8 @@ package lines;
 
 import support.sedgewick.StdDraw;
 
+import java.awt.*;
+
 public class Lines {
 
 	/**
@@ -13,9 +15,20 @@ public class Lines {
 	 */
 	public static void drawLine(double x1, double y1, double x2, double y2) {
 		// FIXME -- fill in this method according to the instructions
+		StdDraw.setPenColor(Color.BLUE);
+		StdDraw.setPenRadius(0.01);
+		if((x2-x1)<=0.0025 && (y2-y1)<=0.0025 && (x2-x1)>=-0.0025 && (y2-y1)>=-0.0025){
+			StdDraw.point(x1, y1);
+			StdDraw.point(x2, y2);
+		}
+		else{
+			double xMid = (x2-x1)/2;
+			double yMid = (y2-y1)/2;
+			drawLine(x1, y1, x1+xMid, y1+yMid);
+			drawLine(xMid+x1, yMid+y1, x2, y2);
+		}
 	}
-	
-	
+
 	/**
 	 * Code to test the drawLine method visually
 	 */

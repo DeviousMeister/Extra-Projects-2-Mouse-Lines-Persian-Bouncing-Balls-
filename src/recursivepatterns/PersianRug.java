@@ -16,6 +16,7 @@ public class PersianRug {
 	 * @param south color index of the south side of this rug square
 	 * @param west color index of the west side of this rug square
 	 */
+
 	private static void persianRug(
 			Color[] palette, 
 			double llx, double lly,
@@ -24,6 +25,15 @@ public class PersianRug {
 		//
 		// FIXME Your code goes here
 		//
+		if(size<.05){
+			return;
+		}
+		StdDraw.line(llx, lly+size/2, llx+size, lly+size/2);
+		StdDraw.line(llx+size/2, lly, llx+size/2, lly+size);
+		persianRug(palette, llx, lly, size/2, north, east, south, west);
+		persianRug(palette, llx, lly+size/2, size/2, north, east, south, west);
+		persianRug(palette, llx+size/2, lly+size/2, size/2, north, east, south, west);
+		persianRug(palette, llx+size/2, lly, size/2, north, east, south, west);
 	}
 
 	public static void main(String args[]) {
