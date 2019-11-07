@@ -24,7 +24,6 @@ public class FollowTheMouse {
         StdDraw.setPenColor(Color.BLUE);
         StdDraw.clear();
         StdDraw.filledCircle(x, y, radius);
-
     }
 
     public static double[] changePosition(double[] position, double[] mousePosition, double speed){

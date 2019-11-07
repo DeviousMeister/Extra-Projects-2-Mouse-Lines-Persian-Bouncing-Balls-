@@ -25,15 +25,16 @@ public class PersianRug {
 		//
 		// FIXME Your code goes here
 		//
-		if(size<.05){
+		if(size<.0025){
 			return;
 		}
+		StdDraw.setPenColor(palette[(north+south-east)%palette.length]);
 		StdDraw.line(llx, lly+size/2, llx+size, lly+size/2);
 		StdDraw.line(llx+size/2, lly, llx+size/2, lly+size);
-		persianRug(palette, llx, lly, size/2, north, east, south, west);
-		persianRug(palette, llx, lly+size/2, size/2, north, east, south, west);
-		persianRug(palette, llx+size/2, lly+size/2, size/2, north, east, south, west);
-		persianRug(palette, llx+size/2, lly, size/2, north, east, south, west);
+		persianRug(palette, llx, lly, size/2, north+2, east+1, south+2, west);
+		persianRug(palette, llx, lly+size/2, size/2, north+south, east, south+north, west);//
+		persianRug(palette, llx+size/2, lly+size/2, size/2, north+2, east+1, south+2, west);
+		persianRug(palette, llx+size/2, lly, size/2, north+south, east, south+north, west);//
 	}
 
 	public static void main(String args[]) {
@@ -48,7 +49,7 @@ public class PersianRug {
 		//
 		//  Here is the line to uncomment:
 		//
-		//  StdDraw.show(10);   // don't forget to uncomment the other line at the end
+		  StdDraw.show(10);   // don't forget to uncomment the other line at the end
 		//
 		
 		
@@ -80,7 +81,7 @@ public class PersianRug {
 		// Also uncomment this line when you have things working
 		//   to speed up the drawing:
 		//
-		// StdDraw.show(10);
+		 StdDraw.show(10);
 		//
 	}
 

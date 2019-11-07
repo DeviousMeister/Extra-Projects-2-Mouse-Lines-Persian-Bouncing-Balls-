@@ -15,7 +15,7 @@ public class Lines {
 	 */
 	public static void drawLine(double x1, double y1, double x2, double y2) {
 		// FIXME -- fill in this method according to the instructions
-		StdDraw.setPenColor(Color.BLUE);
+		StdDraw.setPenColor(Color.BLACK);
 		StdDraw.setPenRadius(0.01);
 		if((x2-x1)<=0.0025 && (y2-y1)<=0.0025 && (x2-x1)>=-0.0025 && (y2-y1)>=-0.0025){
 			StdDraw.point(x1, y1);
